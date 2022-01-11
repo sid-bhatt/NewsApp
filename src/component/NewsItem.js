@@ -7,7 +7,7 @@ function NewsItem({ title, description, imageUrl, newUrl, source }) {
                 <span className="position-absolute top-0 translate-middle badge rounded-pill bg-warning" style={{left: '90%', zIndex: '1'}}>
                     {source}
                 </span>
-                <img className="image card-img-top" src={!imageUrl ? 'https://images.indianexpress.com/2022/01/COMET-COLORS.jpg' : imageUrl} className="card-img-top" alt="..." />
+                <img className="card-img-top" src={!imageUrl ? 'https://images.indianexpress.com/2022/01/COMET-COLORS.jpg' : imageUrl}  alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{title}...</h5>
                     <p className="card-text">{!description ? 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. El' : description}...</p>
