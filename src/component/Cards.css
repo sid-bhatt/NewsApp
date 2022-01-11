@@ -1,0 +1,15 @@
+.card{
+    max-height: 450px;
+    margin-bottom: 20px;
+}
+.image{
+    max-height: 150px;
+}
+.card-body{
+    max-height: 300px;
+}
+.heading{
+    margin-top: 60px;
+    /* display: block; */
+    padding: 10px;
+}
