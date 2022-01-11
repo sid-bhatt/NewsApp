@@ -15,17 +15,11 @@ function News({category}) {
 
     useEffect(() => {
         const fetchURL = () => {
-            // const result = await axios(URL);
-            // setArticle(result.data.articles);
-            // console.log(result.data);
-            
             axios
-                .get(`https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=2102ab9176684584811e9fa97365f9cf&page=${pageNumber}&pageSize=${pageSize}`)
+                .get(`https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}&page=${pageNumber}&pageSize=${pageSize}`)
                 .then(response => {
                     setArticle(response.data.articles);
-                    // eslint-disable-next-line react-hooks/exhaustive-deps
                     console.log(response)
-                    // console.log(response.data)
                 })
                 .catch(err => {
                     console.log(err);
@@ -34,7 +28,7 @@ function News({category}) {
 
         fetchURL()
         return () => {}
-    }, [pageNumber, pageSize])
+    }, [pageNumber, pageSize, category])
 
     const handleNextEvent = () => {
         setPageNumber(prev => prev + 1)

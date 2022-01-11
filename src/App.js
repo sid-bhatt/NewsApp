@@ -11,8 +11,8 @@ function App() {
       <Navbar/>
       <Switch>
         <Route exact path="/general"><News key="general" category="general"/></Route>
-        <Route exact path="/general"><News key="business" category="business"/></Route>
-        <Route exact path="/general"><News key="entertainment" category="entertainment"/></Route>
+        <Route exact path="/business"><News key="business" category="business"/></Route>
+        <Route exact path="/entertainment"><News key="entertainment" category="entertainment"/></Route>
         <Route exact path="/health"><News key="health" category="health"/></Route>
         <Route exact path="/science"><News key="science" category="science"/></Route>
         <Route exact path="/sports"><News key="sports" category="sports"/></Route>
