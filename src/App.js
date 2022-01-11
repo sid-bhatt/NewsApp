@@ -17,6 +17,7 @@ function App() {
         <Route exact path="/science"><News key="science" category="science"/></Route>
         <Route exact path="/sports"><News key="sports" category="sports"/></Route>
         <Route exact path="/technology"><News key="technology" category="technology"/></Route>
+        <Route exact path="/"><News key="gerenal" category="general"/></Route>
       </Switch>
       
     </Router>

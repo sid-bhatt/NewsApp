@@ -8,18 +8,16 @@ function News({category}) {
     const API_KEY = '2102ab9176684584811e9fa97365f9cf';
     const [article, setArticle] = useState({})
     const [pageNumber, setPageNumber] = useState(1);
-    const [pageSize, setPageSize] = useState(10)
-    // let totalResults;
-    // const [loading, setLoading] = useState(false)
-    const [totalResults, setTotalResults] = useState()
+    // const [pageSize, setPageSize] = useState(10)
+    const [totalResults] = useState()
 
+    let pageSize = 10;
     useEffect(() => {
         const fetchURL = () => {
             axios
                 .get(`https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}&page=${pageNumber}&pageSize=${pageSize}`)
                 .then(response => {
                     setArticle(response.data.articles);
-                    console.log(response)
                 })
                 .catch(err => {
                     console.log(err);
