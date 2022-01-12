@@ -1,6 +1,5 @@
 .card{
-    max-height: 450px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .image{
     max-height: 150px;
@@ -10,6 +9,5 @@
 }
 .heading{
     margin-top: 60px;
-    /* display: block; */
-    padding: 10px;
+    padding: 15px;
 }

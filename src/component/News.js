@@ -9,7 +9,7 @@ function News({category}) {
     const [article, setArticle] = useState({})
     const [pageNumber, setPageNumber] = useState(1);
     // const [pageSize, setPageSize] = useState(10)
-    const [totalResults] = useState()
+    const [totalResults, setTotalResults] = useState()
 
     let pageSize = 10;
     useEffect(() => {
@@ -18,6 +18,8 @@ function News({category}) {
                 .get(`https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${API_KEY}&page=${pageNumber}&pageSize=${pageSize}`)
                 .then(response => {
                     setArticle(response.data.articles);
+                    setTotalResults(response.data.totalResults);
+                    // console.log(response.data.totalResults);
                 })
                 .catch(err => {
                     console.log(err);
@@ -46,7 +48,7 @@ function News({category}) {
                 {article.length ? article.map((element) => {
                     return (
                             <div className='col-md-4' key={element.url}>
-                                <NewsItem title={element.title?element.title.slice(0,30): ""} description={element.description?element.description.slice(0,60): ""}
+                                <NewsItem title={element.title?element.title.slice(0,30): ""} description={element.description?element.description.slice(0,80): ""}
                                 imageUrl={element.urlToImage} newUrl={element.url} source={element.source.name}/>
                             </div>                        
                     )
